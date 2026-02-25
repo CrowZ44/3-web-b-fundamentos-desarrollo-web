@@ -1,0 +1,64 @@
+*{
+    margin: 10px;
+    padding: 0;
+    font-size: 16px;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgb(6, 6, 87);
+    color: aliceblue;
+
+}
+
+h1{
+    color: rgb(255, 255, 255);
+    background-color: blueviolet;
+    border-radius: 30px;
+}
+h2{
+    color: chartreuse;
+    border-radius: 15px;
+    background-color: black;
+}
+p{
+    display: inline;
+
+}
+button{
+    display: inline-block;
+}
+button:hover{
+    background-color: blueviolet;
+    color: #fff;
+    border: none;
+    padding: 8px;
+    border-radius: 9px;
+    transition-duration: .3s;
+
+}
+.bg-aqua{
+    background-color: aqua;
+}
+.color-tomato{
+    color: tomato;
+}
+.color-orange{
+    color: orange;
+}
+#destacados{
+    background-color: rgb(101, 101, 238);
+    border: 2px;
+    padding: 20px;
+    border-radius: 15px;
+}
+.form-registro .datos-persona {
+    display: inline-block;
+}
+.form-registro .datos-persona .input-nombre{
+    padding: 6px;
+    border-radius: 8px;
+    
+}
+.form-registro .datos-persona .input-nombre:focus{
+    color: black;
+    background-color: aquamarine;
+
+}
