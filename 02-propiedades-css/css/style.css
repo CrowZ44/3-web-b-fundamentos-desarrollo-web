@@ -1,0 +1,23 @@
+body {
+    background-color: rgb(76, 73, 78);
+    color: aliceblue;
+}
+
+.titulo {
+    font-family: "Quantico", sans-serif;
+    font-size: 2rem;
+    font-weight: 100;
+    font-style: oblique;
+}
+
+p {
+    text-align: right;
+    background-color: rgb(105, 103, 103);
+    font-family: "Electrolize", sans-serif;
+
+}
+
+.btn-box {
+    text-align: center;
+    font-family: "Electrolize", sans-serif;
+}
