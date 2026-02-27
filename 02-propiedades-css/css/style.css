@@ -21,3 +21,12 @@ p {
     text-align: center;
     font-family: "Electrolize", sans-serif;
 }
+
+#portada{
+    text-align: center;
+    margin-top: 20px;
+}
+#portada img{
+    border: 25px solid orange;
+    padding: 5px 10px 50px;
+}
