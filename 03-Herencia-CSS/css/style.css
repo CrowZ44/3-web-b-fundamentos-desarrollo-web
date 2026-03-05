@@ -1,16 +1,85 @@
-body{
+body {
     background-color: #121212;
-    color:aliceblue;
+    color: aliceblue;
+    font-family: "Electrolize", sans-serif;
 
 }
-h1{
+
+#a {
+    z-index: 1;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    margin-right: 10px;
+    padding: 6px 12px;
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+}
+
+h1 {
     font-family: "Quantico", sans-serif;
 }
 
-h4{
+h4 {
     color: gold;
 }
 
-#miParrafo{color: blueviolet;}
-.p{color: chocolate;}
-p{color: chartreuse;}
+#miParrafo {
+    color: blueviolet;
+}
+
+.p {
+    color: chocolate;
+}
+
+
+.stik {
+    background-color: mediumblue;
+    border-radius: 15px;
+    position: sticky;
+    top: 0;
+    margin: 10px;
+}
+
+/*Ejemplo Position */
+.parent {
+    background-color: rgb(10, 14, 49);
+    width: 400px;
+    height: 300px;
+    top: 1rem;
+    margin: 3rem;
+    border: 5px solid white;
+    border-radius: 15px;
+    position: relative;
+}
+
+.parent h1 {
+    position: absolute;
+    font-size: 4.5rem;
+    left: 20%;
+    bottom: 20%;
+}
+
+.parent img {
+    position: absolute;
+}
+
+.orange {
+
+    right: 0;
+    top: 7%;
+}
+
+.leaf {
+    bottom: 18%;
+    left: 5%;
+}
+
+.parent2 {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+}
