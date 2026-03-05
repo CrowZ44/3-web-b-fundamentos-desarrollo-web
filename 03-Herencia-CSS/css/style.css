@@ -1,0 +1,16 @@
+body{
+    background-color: #121212;
+    color:aliceblue;
+
+}
+h1{
+    font-family: "Quantico", sans-serif;
+}
+
+h4{
+    color: gold;
+}
+
+#miParrafo{color: blueviolet;}
+.p{color: chocolate;}
+p{color: chartreuse;}
