@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro a Flexbox</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <h1>Intro a Flexbox </h1>
+
+    <div class="container">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+    </div>
+
+    <h1>Ejercicio Flexbox</h1>
+
+    <div class="page">
+
+        <header>
+            <div class="logo">Flashcard</div>
+
+            <div class="botones">
+                <button class="active">Study Mode</button>
+                <button>All Cards</button>
+            </div>
+        </header>
+
+        <main>
+            <section class="main-content">
+                <div class="top-controls">
+                    <div class="left-controls">
+                        <select>
+                            <option>All Categories</option>
+                            <option>HTML</option>
+                            <option>CSS</option>
+                            <option>JavaScript</option>
+                        </select>
+
+                        <label class="check-mastered">
+                            <input type="checkbox">
+                            Hide Mastered
+                        </label>
+                    </div>
+
+                    <button class="shuffle-btn">Shuffle</button>
+                </div>
+
+                <div class="flashcard">
+                    <span class="tag">Web Development</span>
+                    <h2>What does HTML stand for?</h2>
+                    <p>Click to reveal answer</p>
+
+                    <div class="progress-bar">
+                        <div class="progress"></div>
+                    </div>
+
+                    <span class="counter">8/5</span>
+                </div>
+
+                <div class="card-actions">
+                    <button class="know-btn">I Know This</button>
+                    <button class="reset-btn">Reset Progress</button>
+                </div>
+
+                <div class="navigation">
+                    <button>Previous</button>
+                    <span>Card 1 of 40</span>
+                    <button>Next</button>
+                </div>
+            </section>
+
+            <aside class="statistics">
+                <h3>Study Statistics</h3>
+
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <p>Total Cards</p>
+                        <h2>40</h2>
+                    </div>
+                    <div class="stat-icon blue"></div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <p>Mastered</p>
+                        <h2>11</h2>
+                    </div>
+                    <div class="stat-icon green"></div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <p>In Progress</p>
+                        <h2>21</h2>
+                    </div>
+                    <div class="stat-icon pink"></div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <p>Not Started</p>
+                        <h2>8</h2>
+                    </div>
+                    <div class="stat-icon purple"></div>
+                </div>
+            </aside>
+        </main>
+
+    </div>
+</body>
+
+</html>
