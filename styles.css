@@ -1,47 +1,216 @@
+
+/* --- BOX-SIZING (hereda a todos los elementos) --- */
 * {
-    font-family: "Electrolize", sans-serif;
-    color: chartreuse;
-}
-
-body {
-    background-color: #000000;
-    /* gris claro */
-    font-family: Georgia, serif;
-    padding: 30px;
-}
-
-h1 {
+    box-sizing: border-box;
     margin: 0;
-    font-weight: bold;
+    padding: 0;
 }
 
-h1:nth-of-type(2) {
-    margin-top: 20px;
+/* --- HERENCIA: color y fuente se heredan desde body --- */
+body {
+    font-family: 'Share Tech Mono', monospace;
+    color: #39ff14;
+    background-color: #050a03;
+    min-height: 100vh;
+    padding: 40px 20px;
 }
 
-a {
-    text-decoration: none;
-    border-radius: 15px;
+/* --- SELECTORES: elemento --- */
+h1 {
+    font-family: 'Press Start 2P', monospace;
+    font-size: clamp(0.9rem, 2.5vw, 1.4rem);
+    line-height: 1.7;
+    letter-spacing: 0.05em;
+    text-shadow: 0 0 10px #39ff1466;
 }
 
-button {
-    margin-top: 20px;
-    margin-right: 10px;
-    padding: 6px 12px;
-    font-family: inherit;
-    cursor: pointer;
+h2 {
+    font-size: 0.7rem;
+    letter-spacing: 0.5em;
+    color: #4a8f35;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    color: #4a8f35;
+    margin-bottom: 14px;
 }
 
 footer {
-    margin-top: 20px;
+    font-size: 0.65rem;
+    color: #1d4010;
+    letter-spacing: 0.2em;
+    padding-top: 16px;
+    border-top: 1px solid #1d4010;
+    display: flex;
+    justify-content: space-between;
 }
 
+/* --- POSITION FIXED: scanlines flotando sobre todo --- */
+.scanlines {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        to bottom,
+        transparent 0px,
+        transparent 3px,
+        rgba(0, 0, 0, 0.2) 3px,
+        rgba(0, 0, 0, 0.2) 4px
+    );
+    pointer-events: none;
+    z-index: 100;
+}
+
+/* --- BOX MODEL: contenedor principal --- */
+.container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 40px;
+    border: 1px solid #1d4010;
+    background-color: #0a1208;
+}
+
+/* --- FLEXBOX: encabezado centrado --- */
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 36px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #1d4010;
+}
+
+.header-label {
+    font-size: 0.65rem;
+    color: #4a8f35;
+    letter-spacing: 0.3em;
+    margin-bottom: 18px;
+}
+
+/* --- POSITION STICKY: el label queda fijo al hacer scroll --- */
+.section-label {
+    position: sticky;
+    top: 0;
+    background-color: #0a1208;
+    z-index: 10;
+    padding: 8px 0;
+}
+
+/* --- FLEXBOX: grid de módulos con wrap --- */
+.btn-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 36px;
+}
+
+/* --- BOX MODEL + HOVER en selector de clase --- */
 .btn {
-    display: inline-block;
-    margin-top: 20px;
-    margin-right: 10px;
-    padding: 6px 12px;
-    background-color: white;
-    border: 1px solid black;
-    color: black;
+    flex: 1 1 180px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 14px 12px;
+    border: 1px solid #1d4010;
+    text-decoration: none;
+    background-color: transparent;
+    transition: background-color 0.15s, border-color 0.15s;
+}
+
+.btn:hover {
+    background-color: rgba(57, 255, 20, 0.05);
+    border-color: #2a6018;
+}
+
+/* --- SELECTORES: descendiente --- */
+.btn .btn-num {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.45rem;
+    color: #1d4010;
+    transition: color 0.15s;
+}
+
+.btn .btn-text {
+    font-size: 0.8rem;
+    color: #4a8f35;
+    transition: color 0.15s;
+}
+
+/* --- ESPECIFICIDAD: .btn:hover .btn-num gana sobre .btn .btn-num --- */
+.btn:hover .btn-num  { color: #ffb300; }
+.btn:hover .btn-text { color: #39ff14; }
+
+/* --- CLASE ESPECÍFICA: botón final --- */
+.btn-final {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 28px 20px;
+    border: 1px solid #39ff14;
+    background-color: rgba(57, 255, 20, 0.04);
+    text-decoration: none;
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.btn-final:hover {
+    background-color: rgba(57, 255, 20, 0.09);
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.15);
+}
+
+.btn-final-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.btn-final-icon {
+    font-size: 1rem;
+    color: #1d4010;
+    transition: color 0.2s;
+}
+
+.btn-final:hover .btn-final-icon { color: #ffb300; }
+
+.btn-final-text {
+    font-family: 'Press Start 2P', monospace;
+    font-size: clamp(0.75rem, 2vw, 1rem);
+    color: #39ff14;
+    letter-spacing: 0.1em;
+    text-shadow: 0 0 8px #39ff1466;
+}
+
+.btn-final-sub {
+    font-size: 0.65rem;
+    color: #4a8f35;
+    letter-spacing: 0.4em;
+}
+
+/* --- MEDIA QUERIES: diseño responsivo --- */
+@media (max-width: 600px) {
+    .container {
+        padding: 24px 16px;
+    }
+
+    .btn-grid {
+        flex-direction: column;
+    }
+
+    h1 {
+        font-size: 0.8rem;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 4px;
+        text-align: center;
+    }
 }
