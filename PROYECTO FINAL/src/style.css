@@ -1,0 +1,838 @@
+/* =========================
+FUENTE Y CONFIGURACIÓN GLOBAL
+========================= */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+/* Selector universal */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Herencia y estilos base */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f4f4f4;
+    color: #222;
+    line-height: 1.6;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+}
+
+/* Selectores múltiples */
+h1,
+h2,
+h3 {
+    color: #111;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* =========================
+HEADER Y NAVBAR
+========================= */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #fff;
+
+    z-index: 1000;
+    transition: background-color 0.4s ease, backdrop-filter 0.4s ease;
+}
+
+.navbar {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 14px 32px;
+
+    display: flex;
+    /* Flexbox */
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo img {
+    width: 170px;
+    height: auto;
+}
+
+/* Menú principal */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.nav-menu li {
+    position: relative;
+    /* necesario para el dropdown */
+}
+
+.nav-menu a {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #ffffff;
+    padding: 10px 6px;
+    transition: color 0.3s ease, border-color 0.3s ease;
+    border-bottom: 2px solid transparent;
+}
+
+/* Hover */
+.nav-menu a:hover {
+    color: #f58220;
+    border-bottom: 2px solid #f58220;
+}
+
+.header.scrolled {
+    background-color: transparent;
+    backdrop-filter: blur(6px);
+    /* efecto moderno opcional */
+}
+
+
+/* =========================
+DROPDOWN
+========================= */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+
+    min-width: 220px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+    padding: 10px 0;
+
+    display: none;
+    /* Displays */
+    z-index: 999;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 12px 18px;
+    border-bottom: none;
+    font-size: 0.92rem;
+    color: #222;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #f7f7f7;
+    color: #f58220;
+    border-bottom: none;
+    transition-delay: 0.2s;
+}
+
+/* Mostrar dropdown con hover */
+.dropdown:hover .dropdown-menu {
+    display: block;
+    transition-delay: 0.2s;
+    
+
+}
+
+/* =========================
+MAIN
+========================= */
+.main {
+    margin-top: 0px;
+    /* espacio por navbar fija */
+}
+
+/* Hero */
+.hero {
+    min-height: 80vh;
+
+    background-image: url("https://static.wixstatic.com/media/1a2358_48961b8c844d4403a80eb0243991294a~mv2.jpg/v1/fill/w_1500,h_648,al_c,q_85,enc_avif,quality_auto/1a2358_48961b8c844d4403a80eb0243991294a~mv2.jpg");
+    /* tu imagen */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+    margin: 0;
+
+}
+
+.hero-tag {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #f58220;
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.hero-tag .line {
+    width: 50px;
+    height: 2px;
+    background-color: #f58220;
+}
+
+/* Overlay oscuro para legibilidad */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    z-index: 1;
+}
+
+.hero-content {
+    flex: 1 1 500px;
+    position: relative;
+    z-index: 2;
+    text-align: left;
+    padding-left: 100px;
+    color: #ffffff;
+
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-weight: 700;
+    text-align: left;
+
+}
+
+.hero-content p {
+    max-width: 600px;
+    font-size: 1.1rem;
+    margin: 15px;
+    margin-bottom: 25px;
+    color: #e0e0e0;
+}
+
+.hero-content,
+.hero-media {
+    position: relative;
+    z-index: 2;
+}
+
+/* =========================
+PÁRRAFO CON LÍNEA LATERAL
+========================= */
+.hero-text {
+    position: relative;
+    padding-left: 18px;
+    margin: 0;
+    margin-bottom: 30px;
+    text-align: left;
+    max-width: 600px;
+}
+
+.hero-text::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 3px;
+    height: 85%;
+    background-color: #f58220;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+
+/* Botón principal */
+.btn-primary {
+    display: inline-block;
+    background-color: #f58220;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+/* Botón secundario sólido */
+.btn-secondary {
+    background-color: #ffffff;
+    color: #111;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+/* Botón secundario outline */
+.btn-secondary-outline {
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+/* Hover */
+.btn-secondary:hover {
+    background-color: #110800;
+    transform: translateY(-2px);
+    color: #fff;
+    transition-delay: 0.2s;
+
+}
+
+.btn-secondary-outline:hover {
+    background-color: #ffffff;
+    transform: translateY(-2px);
+    color: #111;
+    transition-delay: 0.2s;
+
+}
+
+.btn-primary:hover {
+    background-color: #110800;
+    transform: translateY(-2px);
+    transition-delay: 0.2s;
+}
+
+.hero-media {
+    flex: 1 1 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-media img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Contenido placeholder */
+.content-placeholder {
+    padding: 80px 40px;
+    background-color: #ffffff;
+}
+
+.content-placeholder h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.content-placeholder p {
+    max-width: 850px;
+    font-size: 1rem;
+    color: #555;
+}
+
+/* =========================
+FOOTER
+========================= */
+.footer {
+    background-color: #111;
+    color: #fff;
+    padding: 30px 40px 20px;
+}
+
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-logo img {
+    width: 120px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: #ddd;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #f58220;
+    transition-delay: 0.2s;
+}
+
+.footer-copy {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    font-size: 0.9rem;
+    color: #bbb;
+}
+
+/* =========================
+   ESPECIFICIDAD
+   Ejemplo de selector más específico
+========================= */
+.nav-menu .dropdown .dropdown-menu li a {
+    font-weight: 500;
+}
+
+/* =========================
+POSITION STICKY
+Puedes usarlo después en una sección
+========================= */
+.sticky-example {
+    position: sticky;
+    top: 100px;
+}
+
+/* =========================
+MEDIA QUERIES
+========================= */
+@media (max-width: 992px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-menu {
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+
+    .hero {
+        padding: 40px 25px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        position: static;
+    }
+
+    .main {
+        margin-top: 0;
+    }
+
+    .navbar {
+        padding: 20px;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        border-radius: 0;
+        padding-left: 10px;
+        background-color: #f9f9f9;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: block;
+        transition-delay: 0.2s;
+    }
+
+    .hero {
+        min-height: auto;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content p {
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+
+    .hero-content {
+        padding-left: 20px;
+    }
+
+    .hero-media {
+        width: 100%;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content p {
+        font-size: 0.95rem;
+    }
+
+    .btn-primary {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+
+
+/* =========================
+   SECCIÓN 1: BENEFICIOS
+========================= */
+.benefits {
+    background-color: #16181f;
+    padding: 30px 40px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex: 1 1 220px;
+    min-width: 220px;
+}
+
+.benefit-icon {
+    width: 62px;
+    height: 62px;
+    background-color: #23252d;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.benefit-icon img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+.benefit-item p {
+    color: #ffffff;
+    font-size: 1.05rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* =========================
+   SECCIÓN 2: TEXTO + SOLUCIÓN
+========================= */
+.about-solution {
+    background: linear-gradient(90deg, #181a22 0%, #1d1f29 100%);
+    padding: 70px 40px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.about-text {
+    flex: 1 1 500px;
+    max-width: 650px;
+}
+
+.about-text h2 {
+    color: #ffffff;
+    font-size: 3.4rem;
+    line-height: 1.1;
+    margin-bottom: 10px;
+}
+
+.about-text h3 {
+    color: #b8aca4;
+    font-size: 3rem;
+    line-height: 1.1;
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+
+.about-text p {
+    color: #ffffff;
+    font-size: 1.15rem;
+    line-height: 1.7;
+    max-width: 700px;
+}
+
+.about-line {
+    display: block;
+    width: 120px;
+    height: 5px;
+    margin-top: 24px;
+    background: linear-gradient(90deg, #f58220 0%, rgba(245, 130, 32, 0.1) 100%);
+}
+
+.solution-box {
+    flex: 1 1 450px;
+    max-width: 700px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    background-color: rgba(255, 255, 255, 0.04);
+    padding: 35px 40px;
+}
+
+.solution-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+}
+
+.solution-accent {
+    width: 8px;
+    height: 34px;
+    background-color: #f58220;
+    display: inline-block;
+}
+
+.solution-header h3 {
+    color: #ffffff;
+    font-size: 2rem;
+    margin: 0;
+    flex: 1;
+}
+
+.solution-header img {
+    width: 120px;
+    height: auto;
+}
+
+.solution-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.solution-box li {
+    color: #ffffff;
+    font-size: 1.12rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    padding-left: 38px;
+    position: relative;
+}
+
+.solution-box li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: rgba(245, 130, 32, 0.45);
+    color: #3b2b13;
+    font-size: 0.9rem;
+    font-weight: bold;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* =========================
+   SECCIÓN 3: CARDS AUTOBUSES
+========================= */
+.bus-menu {
+    background-color: #f4f4f4;
+    padding: 80px 40px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-title h2 {
+    font-size: 2.4rem;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    color: #555;
+    font-size: 1rem;
+}
+
+.bus-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.bus-card {
+    background-color: #ffffff;
+    width: calc(33.333% - 20px);
+    min-width: 280px;
+    max-width: 380px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bus-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.15);
+    transition-delay: 0.2s;
+}
+
+.bus-card-image {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+}
+
+.bus-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bus-card-content {
+    padding: 24px;
+}
+
+.bus-card-content h3 {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    color: #111;
+}
+
+.bus-card-content p {
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.bus-card-content a {
+    display: inline-block;
+    padding: 10px 18px;
+    background-color: #f58220;
+    color: #ffffff;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.bus-card-content a:hover {
+    background-color: #d86d13;
+    transition-delay: 0.2s;
+}
+
+/* =========================
+RESPONSIVE
+========================= */
+@media (max-width: 992px) {
+    .about-text h2 {
+        font-size: 2.6rem;
+    }
+
+    .about-text h3 {
+        font-size: 2.2rem;
+    }
+
+    .solution-header h3 {
+        font-size: 1.6rem;
+    }
+
+    .bus-card {
+        width: calc(50% - 15px);
+    }
+}
+
+@media (max-width: 768px) {
+
+    .benefits,
+    .about-solution,
+    .bus-menu {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .benefits {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .about-text h2 {
+        font-size: 2.2rem;
+    }
+
+    .about-text h3 {
+        font-size: 1.9rem;
+    }
+
+    .about-text p,
+    .solution-box li {
+        font-size: 1rem;
+    }
+
+    .bus-card {
+        width: 100%;
+        max-width: 100%;
+    }
+}
